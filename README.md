@@ -4,6 +4,7 @@ Pool
 Simple JavaScript Object Pool offered as both a MooTools class and a simple function constructor. Usage is pretty much the same for both implementations.
 
 **Object Pool**
+
 http://en.wikipedia.org/wiki/Object_pool_pattern
 
 An object pool is a set of initialised objects that are kept ready to use, rather than allocated and destroyed on demand. A client of the pool will request an object from the pool and perform operations on the returned object. When the client has finished with an object, it returns it to the pool, rather than destroying it.
