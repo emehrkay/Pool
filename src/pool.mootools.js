@@ -1,13 +1,16 @@
 var Pools = new Class({
-    $objects: [],     
+    $objects: [],
     $queue: [], 
     
     initialize: function(objects){
-        this.$objects = Array.from(objects);
+        this.$objects = [].combine(Array.from(objects));
     },
     
     add: function(object){
-        this.$objects.push(object);
+        if(!this.$objects.contains(object)){
+            this.$objects.push(object);
+        }
+
         return this.call();
     },
     

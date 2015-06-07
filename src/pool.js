@@ -1,13 +1,27 @@
 (function(){
 
 function Pool(objects){
+    var objs = [], i;
+
+    for(i = 0, i < objects.length; i++){
+        var idx = objs.indexOf(objects[i]);
+
+        if(idx === -1){
+            objs.push(objects[i]);
+        }
+    }
+
     this.queue = [];
-    this.objects = objects;
+    this.objects = objs;
 };
 
 Pool.prototype.add = function(object){
-    this.objects.push(object);
+    var idx = this.objects.indexOf(object);
     
+    if(idx === -1){
+        this.objects.push(object);
+    }
+
     return this.call();
 };
 
